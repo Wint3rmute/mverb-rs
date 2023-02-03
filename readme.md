@@ -1,3 +1,5 @@
+![Spectrogram of the reverb](./spectrogram.jpg)
+
 # Pure Rust open-source reverb implementation
 
 A [C++ reverb](https://github.com/martineastwood/mverb)
