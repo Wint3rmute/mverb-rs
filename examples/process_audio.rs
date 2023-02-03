@@ -1,4 +1,4 @@
-//! Plays a mono sample through MVerb with default parameters
+//! Plays an audio file through MVerb with default parameters
 
 use rodio::{source::SamplesConverter, source::Source, Decoder, OutputStream, Sink};
 use std::fs::File;
@@ -30,7 +30,7 @@ impl Iterator for MVerbSource {
 
     fn next(&mut self) -> Option<Self::Item> {
         if let Some(sample) = self.samples_converter.next() {
-            Some(self.reverb.process((sample, sample)).0)
+            Some(self.reverb.process((sample, sample)).0 + sample)
         } else {
             None
         }
@@ -56,7 +56,9 @@ impl Source for MVerbSource {
 }
 
 fn main() {
-    let file = BufReader::new(File::open("examples/music.ogg").unwrap());
+    let file_path = "examples/arpeggio.mp3";
+    // let file_path = "examples/lfo_plucks.mp3";
+    let file = BufReader::new(File::open(file_path).unwrap());
     // Decode that sound file into a source
     let dry_audio = Decoder::new(file).unwrap();
 
