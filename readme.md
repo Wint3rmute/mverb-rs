@@ -33,3 +33,13 @@ With MVerb:
 
 https://user-images.githubusercontent.com/19196352/216618976-d9db694f-73ab-439e-afde-791ae83b1407.mp4
 
+
+## Plans
+
+- [ ] Make a VST
+- [ ] Go through the theory and implementation once again:
+  - [ ] audio glitches at low frequencies
+  - [ ] clipping at high reverb size & decay
+
+Contributions are welcome!
+
